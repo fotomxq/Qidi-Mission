@@ -1,0 +1,160 @@
+/* All */
+body {
+    margin: 0;
+    font-size: 16px;
+    font-family: tahoma, arial, tahoma, verdana, sans-serif;
+    word-wrap: break-word;
+    color: #222;
+}
+a {
+    color: #000;
+}
+a:hover {
+    text-decoration: underline;
+}
+a img {
+    border: 0;
+}
+.top,.top div,#frame{
+    position: absolute;
+}
+/* top */
+.top{
+    width:100%;
+    height:79px;
+    background-image: url(images/top_bg.gif);
+    background-repeat:repeat-x;
+}
+.top .logo{
+    top:22px;
+    left:28px;
+    width:185px;
+    height:27px;
+    background-image: url(images/logo.gif);
+    background-repeat:no-repeat;
+}
+#logout{
+    top:22px;
+    right:10px;
+}
+#logout,#logout a,#logout a:hover,#logout a:active{
+    color:#fff;
+    text-decoration:none;
+}
+/* frame */
+#frame{
+    top:100px;
+    left:50px;
+    width:80%;
+}
+#frame_exam,#frame_topic,#frame_mission{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width:95%;
+}
+/* 题库&题目列表 */
+#tab-1,#tab-2,#tab-3 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#tab-1 li,#tab-2 li {
+    margin: 0px 5px 5px 5px;
+    padding: 5px;
+    padding-left: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#tab-1 li:not(:nth-last-child(1)),#tab-2 li:not(:nth-last-child(1)){
+    height: 40px;
+    padding-left: 15px;
+    font-size:20px;
+}
+#tab-1 li:nth-last-child(1){
+    height: 40px;
+}
+#tab-1 li span,#tab-2 li span {
+    float: left;
+    margin-left: -5px;
+}
+#tab-1 li .list_edit,#tab-2 li .list_edit{
+    right: 80px;
+    position: absolute;
+}
+#tab-1 li .list_del,#tab-2 li .list_del{
+    right: 20px;
+    position: absolute;
+}
+/* 课堂 */
+#tab-3 li{
+    font-size: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+#mission_answer{
+    color:red;
+    font-size:40px;
+}
+/* 题库-添加 */
+#exam_add_li{
+    list-style-type: none;
+}
+#exam_add_li ul li{
+    list-style-type: none;
+    float: left;
+    margin-left: 10px;
+}
+#button_exam_add{
+    width:80px;
+    height:30px;
+}
+/* 题目-添加 */
+#topic_add_li{
+    list-style-type: none;
+    height:560px;
+}
+#topic_add_li ul li{
+    list-style-type: none;
+    float: bottom;
+    margin-left: 5px;
+    height:auto !important;
+}
+#topic_add_input_content,#topic_add_input_answer{
+    width:350px;
+    height:150px;
+}
+#button_topic_add{
+    width:80px;
+    height:30px;
+}
+/* 题目-修改 */
+#topic_edit_input_content,#topic_edit_input_answer{
+    width:350px;
+    height:150px;
+}
+/* 提示 */
+.ui-ts-kj{
+    right:15px;
+    top:50px;
+    width:20%;
+    height:auto;
+    min-height:200px;
+    min-width:200px;
+    position: absolute;
+}
+.ui-ts{
+    position:relative;
+    float:bottom;
+    right:0px;
+    width:100%;
+    padding: 5px;
+    margin-top: 5px;
+    display: none;
+}
+/* 操作框架 */
+.ui-action{
+    display:none;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>#{$WEB_TITLE}#</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="jqueryui.css" rel="stylesheet" type="text/css" />
+        <link href="index.css" rel="stylesheet" type="text/css" />
+        <script src="jquery.js"></script>
+        <script src="jqueryui.js"></script>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <div class="top">
+            <div class="logo"></div>
+            <div id="logout"><a href="javascript:load_frame('exam')">返回题库列表</a> | <a href="logout.php">退出登陆</a></div>
+        </div>
+        <div id="frame">
+            <div id="frame_exam">
+                <ul><li><a href="#tab-1">题库列表</a></li></ul>
+                <ul id="tab-1"><li id="exam_add_li" class="ui-state-default"><ul><li>添加新的题库：</li><li><input type="text" id="exam_add_input" class="text ui-widget-content ui-corner-all"></li><li><div id="button_exam_add">添加</div></li></ul></li></ul>
+            </div>
+            <div id="frame_topic" class="ui-action">
+                <ul>
+                    <li><a href="#tab-2" id="topic_title">题目列表</a></li>
+                </ul>
+                <ul id="tab-2">
+                    <li id="topic_add_li" class="ui-state-default">
+                        <ul>
+                            <li>新的题目（必填)：</li>
+                            <li><textarea id="topic_add_input_content" class="text ui-widget-content ui-corner-all"></textarea></li>
+                            <li>分数（可选)：</li>
+                            <li><input type="text" id="topic_add_input_fraction" class="text ui-widget-content ui-corner-all"></li>
+                            <li>提示答案（可选)：</li>
+                            <li><input type="text" id="topic_add_input_answer" class="text ui-widget-content ui-corner-all"></li>
+                            <li><div id="button_topic_add">添加</div></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="frame_mission" class="ui-action">
+                <ul><li><a href="#tab-3" id="mission_title">课堂模式</a></li></ul>
+                <ul id="tab-3"></ul>
+            </div>
+        </div>
+        <div id="exam_edit" class="ui-action" title="编辑题库">
+            <p></p>
+            <p><input type="text" id="exam_edit_input" class="text ui-widget-content ui-corner-all"></p>
+        </div>
+        <div id="exam_del" class="ui-action" title="删除题库"><p>...</p></div>
+        <div id="topic_edit" class="ui-action" title="编辑题目">
+            <p>题目内容 : </p>
+            <p><textarea id="topic_edit_input_content" class="text ui-widget-content ui-corner-all"></textarea></p>
+            <p>分值 : </p>
+            <p><input type="text" id="topic_edit_input_fraction" class="text ui-widget-content ui-corner-all"></p>
+            <p>答案 : </p>
+            <p><textarea id="topic_edit_input_answer" class="text ui-widget-content ui-corner-all"></textarea></p>
+        </div>
+        <div id="topic_del" class="ui-action" title="删除题目"><p>...</p></div>
+        <div class="ui-ts-kj"></div>
+        <div id="mission_audio" class="ui-action">
+            <audio id="topic_audio_right">
+                <source src="#{$WEB_URL}#/sound/topic_right.ogg" type="audio/ogg">
+                <source src="#{$WEB_URL}#/sound/topic_right.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="topic_audio_error">
+                <source src="#{$WEB_URL}#/sound/topic_error.ogg" type="audio/ogg">
+                <source src="#{$WEB_URL}#/sound/topic_error.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </body>
+</html>

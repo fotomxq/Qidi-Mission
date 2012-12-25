@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>#{$WEB_TITLE}#</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="jqueryui.css" rel="stylesheet" type="text/css" />
+        <link href="login.css" rel="stylesheet" type="text/css" />
+        <script src="jquery.js"></script>
+        <script src="jqueryui.js"></script>
+        <script src="login.js"></script>
+    </head>
+    <body>
+        <div class="top">
+            <div class="logo"></div>
+        </div>
+        <div class="frame">
+            <form id="login" action="login.php" method="post">
+                <div class="input_pass"><input type="password" id="input_pass" name="password" class="text ui-widget-content ui-corner-all"></div>
+                <div class="input_vcode"><input type="text" id="input_vcode" name="vcode" maxlength="4" class="text ui-widget-content ui-corner-all"></div>
+            </form>
+            <div class="vcode"><a href="javascript:hvcode();"><img id="vcode" src="vcode.php"></a></div>
+            <div id="button_submit">登陆</div>
+        </div>
+    </body>
+</html>
