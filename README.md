@@ -1,19 +1,19 @@
 启迪课堂教育平台 Qidi-Mission
 ======
 
-介绍 Expain
+介绍
 ===
 启迪课堂教育平台致力于为教师和学生提供一套完善的线上、线下教育平台。<br/>
 平台搭建完成后仅需浏览器即可直接访问，采用最新的HTML5/Ajax技术，保证访问的流畅一致性。<br/>
 
 
-需求 Requirement
+需求
 ===
 - apache 非必须，但必须配备其他服务器处理软件 <br/>
 * PHP 5.1 or higher<br/>
 * Mysql 5 or heigher 或者其他PHP PDO支持的数据库 <br/>
 
-安装 Installation
+安装
 ===
 0.配置好服务端环境。<br/>
 1.将所有文件上传到服务器。<br/>
@@ -28,7 +28,12 @@
   修改网站根目录下frame.php文件中的DIR_DATA和DIR_LIB到对应路径即可。<br/>
 
 
-更新日志 Update Log
+即将进行
+===
+ *准备重写框架结构，届时lib和data均会改名。同时lib内部文件结构将进行简化。<br/>
+
+
+更新日志
 ===
 -2013.3.8<br/>
  *简化Readme.md介绍内容。<br/>
