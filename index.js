@@ -65,7 +65,8 @@ function refresh_list(type,res){
             if(v["post_name"].length > 35){
                 html_f = "...";
             }
-            html_content += "<li class=\"ui-state-default\" value=\""+k+"\" title=\"<p>题库名称 : "+v["post_name"]+"</p><p>创建时间 : "+v["post_data"]+"</p>\"><span class=\"ui-icon ui-icon-note\"></span>"+(k+1)+" : "+v["post_name"].substr(0,35)+html_f+"<div class=\"list_edit\"><span class=\"ui-icon ui-icon-pencil\"></span>编辑</div><div class=\"list_del\"><span class=\"ui-icon ui-icon-trash\"></span>删除</div></li>";
+            html_content += "<li class=\"ui-state-default\" value=\""+k+"\" ><span class=\"ui-icon ui-icon-note\"></span>"+(k+1)+" : "+v["post_name"].substr(0,35)+html_f+"<div class=\"list_enter\"><span class=\"ui-icon ui-icon-star\"></span>进入</div><div class=\"list_edit\"><span class=\"ui-icon ui-icon-pencil\"></span>编辑</div><div class=\"list_del\"><span class=\"ui-icon ui-icon-trash\"></span>删除</div></li>";
+        //title=\"<p>题库名称 : "+v["post_name"]+"</p><p>创建时间 : "+v["post_data"]+"</p>\"
         });
     }else{
         $(res).each(function(k,v){
@@ -73,7 +74,8 @@ function refresh_list(type,res){
             if(v["post_content"].length > 35){
                 html_f = "...";
             }
-            html_content += "<li class=\"ui-state-default\" value=\""+k+"\" title=\"<p>题目内容 : "+v["post_content"]+"</p><p>答案 : "+v["post_name"]+"</p><p>分值 : "+v["post_fraction"]+"</p>\"><span class=\"ui-icon ui-icon-note\"></span>"+(k+1)+" : "+v["post_content"].substr(0,35)+html_f+"<div class=\"list_edit\"><span class=\"ui-icon ui-icon-pencil\"></span>编辑</div><div class=\"list_del\"><span class=\"ui-icon ui-icon-trash\"></span>删除</div></li>";
+            html_content += "<li class=\"ui-state-default\" value=\""+k+"\" ><span class=\"ui-icon ui-icon-note\"></span>"+(k+1)+" : "+v["post_content"].substr(0,35)+html_f+"<div class=\"list_enter\"><span class=\"ui-icon ui-icon-star\"></span>进入</div><div class=\"list_edit\"><span class=\"ui-icon ui-icon-pencil\"></span>编辑</div><div class=\"list_del\"><span class=\"ui-icon ui-icon-trash\"></span>删除</div></li>";
+       //title=\"<p>题目内容 : "+v["post_content"]+"</p><p>答案 : "+v["post_name"]+"</p><p>分值 : "+v["post_fraction"]+"</p>\"
         });
     }
     if(type == "exam"){
@@ -83,26 +85,37 @@ function refresh_list(type,res){
     }
     $(html_id).children(":not(:last())").remove();
     $(html_id).prepend(html_content);
+    $(html_id).children(":not(:last())").children("[class=\"list_enter\"]").hide();
     $(html_id).children(":not(:last())").children("[class=\"list_edit\"]").hide();
     $(html_id).children(":not(:last())").children("[class=\"list_del\"]").hide();
     //鼠标特效
     $(html_id).children(":not(:last())").mouseover(function(){
         $(html_id).children(":not(:last())").attr("class","ui-state-default");
         $(this).attr("class","ui-state-highlight");
+        $(html_id).children(":not(:last())").children("[class=\"list_enter\"]").hide();
         $(html_id).children(":not(:last())").children("[class=\"list_edit\"]").hide();
         $(html_id).children(":not(:last())").children("[class=\"list_del\"]").hide();
+        $(this).children("[class=\"list_enter\"]").show();
         $(this).children("[class=\"list_edit\"]").show();
         $(this).children("[class=\"list_del\"]").show();
     });
     if(type == "exam"){
-        $(html_id).children(":not(:last())").dblclick(function(){
+        $(html_id).children(":not(:last())").click(function(){//dblclick
+            $("#frame").data("exam-id",$("#frame").data("exam-data")[$(this).attr("value")]["id"]);
+            refresh_list_action("topic");
+            load_frame("topic");
+        });
+        $('[class="list_enter"]').click(function(){
             $("#frame").data("exam-id",$("#frame").data("exam-data")[$(this).attr("value")]["id"]);
             refresh_list_action("topic");
             load_frame("topic");
         });
     }else{
         //课堂模式
-        $(html_id).children(":not(:last())").dblclick(function(){
+        $(html_id).children(":not(:last())").click(function(){//dblclick
+            load_mission($(this).attr("value"),0);
+        });
+        $('[class="list_enter"]').click(function(){
             load_mission($(this).attr("value"),0);
         });
     }

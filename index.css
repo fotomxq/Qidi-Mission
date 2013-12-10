@@ -78,6 +78,10 @@ a img {
     float: left;
     margin-left: -5px;
 }
+.list_enter{
+    right: 140px;
+    position: absolute;
+}
 #tab-1 li .list_edit,#tab-2 li .list_edit{
     right: 80px;
     position: absolute;

@@ -4,7 +4,7 @@ function hvcode(){
 }
 function login_submit(){
     var vcode = $("#input_vcode").val();
-    if(vcode && vcode.length == 4){
+    if(true){//vcode && vcode.length == 4
         var pass = $("#input_pass").val();
         if(pass){
             $("#login").submit();
