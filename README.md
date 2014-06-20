@@ -56,3 +56,9 @@
 <p>jQuery is provided under the <a href="http://jquery.org/license/" target="_blank">MIT license</a>.</p>
 <p>JqueryUI引用</p>
 <p>详情请参阅：<a href="https://github.com/jquery/jquery-ui" target="_blank">https://github.com/jquery/jquery-ui</a></p>
+=======
+ftm-personal
+============
+
+FTM个人多功能平台
+>>>>>>> a251275cd20d2a0e4f90d563702c55c10a6a7137
